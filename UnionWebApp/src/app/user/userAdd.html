@@ -1,0 +1,66 @@
+<section>
+    <div class="container">
+      <h3 class="item-title">Add User</h3>
+      <form class="row" name="vm.addfrom">
+        <div class="panel panel-group">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <div class="col-md-6 form-group toright">
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" tabindex = "1" type="text" class="form-control" ng-model="vm.user.firstname" placeholder="Please enter your FirstName">
+                </div>
+                <div class="col-md-6 form-group toleft">
+                    <label for="lastname">Last Name</label>
+                    <input id="lastname" tabindex = "2" type="text" class="form-control" ng-model="vm.user.lastname" placeholder="Please enter your LastName">
+                </div>
+                <div class="col-md-6 form-group toright">
+                    <label for="email"><span class="alt">*</span>Email address</label>
+                    <input id="email" tabindex = "3" type="email" class="form-control" ng-model="vm.user.email" required placeholder="Please enter your email">
+                </div>
+                <div class="col-md-6 form-group toleft">
+                    <label for="lastname">Employee No</label>
+                    <input id="lastname" tabindex = "4" type="text" class="form-control" ng-model="vm.user.eid" placeholder="Please enter Employee No">
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="status"><span class="alt">*</span>User Status</label>
+                    <div class="panel panel-default" tabindex = "5">
+                        <div class="panel-body">
+                            <div class="inline">
+                                <input id="ActiveStatus" name="status" type="radio"  ng-model="vm.user.status" value="Active" />
+                                <label for="ActiveStatus" style="margin-right: 10px;"><span></span>Active</label>
+                                <input id="InactiveStatus" name="status" type="radio"  ng-model="vm.user.status" value="Not Active" />
+                                <label for="InactiveStatus" style="margin-right: 10px;" ng-class="{alt:true}"><span></span>Not Active</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Role-->
+                <div class="col-md-12 form-group">
+                    <label><span class="alt">*</span>Role</label>
+                    <div class="panel panel-default" tabindex = "5">
+                        <div class="panel-body">
+                            <div class="inline" ng-repeat="roleConfig in vm.roleConfigs">
+                                <input id="{{roleConfig.name}}" class="cstmeinput" type="checkbox" ng-model="roleConfig.isChecked" ng-click="vm.checkIfSelectedAdmin($index)" ng-disabled="roleConfig.isDisabled" />
+                                <label for="{{roleConfig.name}}"><span></span>{{roleConfig.name}}</label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 form-group">
+                	<label for="cot">Comment</label>
+                    <textarea id="cot" tabindex = "8" class="form-control" rows="3" ng-model="vm.user.Comments"></textarea>
+                </div>
+                <!--button-->
+                <div class="col-md-12 form-group">
+	                <input type="submit" class="btn btn-Primary" tabindex = "9" value="Add" ng-click="vm.addUser()">&nbsp;&nbsp;&nbsp;
+	                <input type="button" class="btn btn-Primary" tabindex = "10" value="Cancel" ui-sref="user.list">
+	                <div ng-repeat="alert in vm.alerts" class="inline">
+	                    <alert ng-show="alert.show" typeof="alert.type">{{alert.msg}}</alert>
+	                </div>
+               </div>
+            </div>
+        </div>
+      </form>
+    </div>
+</section>

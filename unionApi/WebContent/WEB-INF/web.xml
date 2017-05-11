@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>zjunion_J</display-name>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>zjunion</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>Init Servlet</description>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>hpe.union.zj.servlet.InitServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>WEB-INF/conf/log4j.properties</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <servlet-mapping>
+    <servlet-name>zjunion</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>cors</filter-name>
+    <filter-class>hpe.union.zj.servlet.CrossFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>cors</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

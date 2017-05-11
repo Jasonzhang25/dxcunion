@@ -1,0 +1,79 @@
+@font-face {
+	font-family:'HPSimplified';
+	src:url(../fonts/latin-e-regular-eot.eot);
+	src:url(../fonts/latin-e-regular-eot.eot?#iefix) format("embedded-opentype"),url("../fonts/latin-e-regular-woff.woff") format("woff"),url("../fonts/latin-e-regular-ttf.ttf") format("truetype");
+	font-weight:normal;
+	font-style:normal
+}
+@font-face {
+	font-family:'HPSimplified';
+	src:url(../fonts/latin-e-bold-eot.eot);
+	src:url(../fonts/latin-e-bold-eot.eot?#iefix) format("embedded-opentype"),url("../fonts/latin-e-bold-woff.woff") format("woff"),url("../fonts/latin-e-bold-ttf.ttf") format("truetype");
+	font-weight:bold;
+	font-style:normal
+}
+@font-face {
+	font-family:'HPSimplifiedLight';
+	src:url(../fonts/latin-e-light-eot.eot);
+	src:url(../fonts/latin-e-light-eot.eot?#iefix) format("embedded-opentype"),url("../fonts/latin-e-light-woff.woff") format("woff"),url("../fonts/latin-e-light-ttf.ttf") format("truetype");
+	font-weight:normal;
+	font-style:normal
+}
+@font-face {
+	font-family:'HPSimplifiedLight';
+	src:url(../fonts/latin-e-light-italic-eot.eot);
+	src:url("../fonts/latin-e-light-italic-woff.woff") format("woff"),url("../fonts/latin-e-light-italic-ttf.ttf") format("truetype");
+	font-weight:normal;
+	font-style:italic
+}
+@font-face {
+    font-family: 'HPSimplified_Bd';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/hps-euro-bold-eot.eot") ;
+    src: url("../fonts/hps-euro-bold-woff.woff ") format("woff"), url("../fonts/hps-euro-bold-ttf.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'HPSimplified_Rg';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/hps-euro-regular-eot.eot");
+    src: url("../fonts/hps-euro-regular-woff.woff") format("woff"), url("../fonts/hps-euro-regular-ttf.ttf") format("truetype");
+}
+/*-------HPE------------*/
+@font-face {
+	font-family: 'MetricHPEWebLight';
+	src: url(../fonts/MetricHPE-Web-Light.eot);
+	src: url(../fonts/MetricHPE-Web-Light.eot?#iefix) format('embedded-opentype'), url(../fonts/MetricHPE-Web-Light.woff) format('woff');
+	font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'MetricHPEWebRegular';
+	src: url(../fonts/MetricHPE-Web-Regular.eot);
+    src: url(../fonts/MetricHPE-Web-Regular.eot?#iefix) format("embedded-opentype"), url("../fonts/MetricHPE-Web-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'MetricHPEWebMedium';
+	src: url(../fonts/MetricHPE-Web-Medium.eot);
+	src: url(../fonts/MetricHPE-Web-Medium.eot?#iefix) format('embedded-opentype'), url(../fonts/MetricHPE-Web-Medium.woff) format('woff');
+	font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'MetricHPEWebBold';
+	src: url(../fonts/MetricHPE-Web-Bold.eot);
+	src: url(../fonts/MetricHPE-Web-Bold.eot?#iefix) format('embedded-opentype'), url(../fonts/MetricHPE-Web-Bold.woff) format('woff');
+	font-weight: normal;
+    font-style: normal;
+} 
+@font-face {
+	font-family: 'MetricHPEWebSemibold';
+	src: url(../fonts/MetricHPE-Web-Semibold.eot);
+	src: url(../fonts/MetricHPE-Web-Semibold.eot?#iefix) format('embedded-opentype'), url(../fonts/MetricHPE-Web-Semibold.woff) format('woff');
+	font-weight: normal;
+    font-style: normal;
+} 
+

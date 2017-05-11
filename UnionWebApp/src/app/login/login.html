@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <p class="pagination">
+            <h3 class="item-title-login">Log in </h3>
+            <div class="panel panel-group-login searchList">
+                <div class="panel-heading"></div>
+                <form class="panel-body">
+                    <div align="center">
+                        <label for="userid">Email Address:</label>&nbsp;
+                        <input Id="employeeNo" type="email" class="form-control inlineCtrl" ng-model="vm.credentials.useremail" style="width: 300px;" 
+                        placeholder="Please enter Employee Email">
+                    </div>
+                    <p>
+                    <div align="center">
+                        <label for="userid">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input Id="password" type="password" class="form-control inlineCtrl" ng-model="vm.credentials.password" style="width: 300px;" 
+                        placeholder="Please enter NT Password" ng-enter="vm.setCookie()">
+                    </div>
+                    <a class="btn btn-Primary-login" width ng-click="vm.setCookie()">Sign In</a>&nbsp;&nbsp;&nbsp;
+                    <div align="center">
+                        <alert ng-show="vm.authenticatealert.show" typeof="vm.authenticatealert.type">{{vm.authenticatealert.msg}}</alert>
+                    </div>
+                </form>
+             </div>
+        </p>
+    </div>
+</section>

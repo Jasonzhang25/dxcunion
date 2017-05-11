@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+      <h3 class="item-title">Upload Employee</h3>
+      <form class="row" name="vm.uploademployeefrom">
+        <div class="panel panel-group">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+               <div class="inline">
+                 <input id="IncrementalUpload" name="uploadtype" type="radio" class="cstmeinput" ng-model="vm.uploadtype" value="incremental" />
+                 <label for="IncrementalUpload" style="margin-right: 10px;"><span></span>Incremental Upload</label>
+                 <input id="FullUpload" name="uploadtype" type="radio" class="cstmeinput" ng-model="vm.uploadtype" value="full" />
+                 <label for="FullUpload" style="margin-right: 10px;"><span></span>Full Upload</label>
+                 <input type = "file" file-model = "uploadFile"/>
+               </div>
+               <br>
+               <div class="inline">
+                <input type="button" class="btn btn-Primary" ng-click = "vm.uploadEmployee()" value="Upload"/>
+                <input type="button" class="btn btn-Primary" tabindex = "10" value="Back" ui-sref="user.list">
+               </div>
+               <p>
+               <div ng-repeat="alert in vm.alerts" class="inline">
+                  <alert ng-show="alert.show" typeof="alert.type">{{alert.msg}}</alert>
+               </div>
+               <!--Error Message List-->
+              <div class="table-responsive" ng-show="vm.errorMsgsShow">
+                <table id="uploadErrorMsgs" class="table" width="100%">
+                <thead>
+                  <tr class="GridHeaderRow">
+                      <th class="center">Process Messages</th>
+                  </tr>
+                </thead>
+                <tr ng-repeat="errorinfo in vm.errorMsgs">
+                  <td data-th="Error Messages"><span ng-bind="errorinfo"></span></td>
+                </tr>
+                </table>
+              </div>
+            </div>
+        </div>
+     </form>
+    </div>
+</section>

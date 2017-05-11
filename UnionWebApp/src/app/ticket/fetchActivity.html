@@ -1,0 +1,79 @@
+<section>
+    <div class="container">
+      <h3 class="item-title">Fetch Activity</h3>
+      <form class="row" name="vm.fetchfrom">
+        <div class="panel panel-group">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                Search Employee:&nbsp;
+                <input Id="searchvalue" class="form-control inlineCtrl" ng-model="vm.searchValue" style="width: 300px;" placeholder="Please enter EmployeeNo">
+                &nbsp;By&nbsp;
+                <select id="serachcriteria" name="orgSelect" class="form-control inlineCtrl" style="width:300px" ng-model="vm.searchCriteria">
+                    <option value="noValue">-------Please Select By Following Options-------</option>
+                    <option value="EmployeeId">Employee Id</option>
+                    <option value="EmployeeEmail">Employee Email</option>
+                </select>
+                <input type="submit" class="btn btn-Primary" value="Search" ng-click="vm.searchEmployee()">
+                &nbsp;&nbsp;&nbsp;
+                <div class="table-responsive">
+                    <table id="userListTable" class="table" width="100%">
+                        <thead>
+                            <tr class="GridHeaderRow">
+                                <th class="center">Employee Id</th>
+                                <th class="center">Employee Name</th>
+                                <th class="center">Employee Email</th>
+                                <th class="center">Status</th>
+                                <th class="center">Gender</th>
+                                <th class="center">Substitute Name</th>
+                                <th class="center">Operator Email</th>
+                                <th class="center">Comments</th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="employee in vm.employeeList ">
+                            <td data-th="Employee Id"><span ng-bind="employee.eid"></span></td>
+                            <td data-th="Employee Name"><span ng-bind="employee.name"></span></td>
+                            <td data-th="Employee Name"><span style='display: inline' ng-bind="employee.email"></span></td>
+                            <td data-th="Employee Status">
+                            <span ng-style="employee.status ==='Fetched'  && {'background-color':'red',color:'black', padding:'3px'}
+                                                                    || employee.status==='Unfected' && {'background-color':'#ffdf00',color:'black',padding:'3px'}"
+                                                                     ng-bind="employee.status"></span></td>
+                            <td data-th="Employee Gender"><span ng-bind="employee.gender"></span></td>
+                            <td data-th="Substitute Name"><span ng-bind="employee.substitutename"></span></td>
+                            <td data-th="Operator Email"><span style='display: inline' ng-bind="employee.operator.email"></span></td>
+                            <td data-th="Comments "><span style='display: inline' ng-bind="employee.comment"></span></td>
+                        </tr>
+                    </table>
+                    <div ng-repeat="alert in vm.alerts" style="margin-top:-20px;margin-bottom:20px"  class="inline">
+                        <alert ng-show="alert.show" typeof="alert.type">{{alert.msg}}</alert>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="row" name="vm.substitute">
+        <!--Substitute-->
+        <div class="panel panel-group">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <div>
+                    Substitute ID:&nbsp;
+                    <input Id="searchvalue" class="form-control inlineCtrl" ng-model="vm.substituteId" style="width: 300px;" placeholder="Please enter EmployeeNo">
+                    <input type="submit" class="btn btn-Primary" value="Search" ng-click="vm.searchSubstitute()">
+                    <p><div>Substitute Name:&nbsp;<span style="color:red" ng-bind="vm.substituteName"></span></div></p>
+                    <div ng-repeat="alert in vm.subalerts" style="margin-top:-20px;margin-bottom:20px"  class="inline">
+                        <alert ng-show="alert.show" typeof="alert.type">{{alert.msg}}</alert>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--button-->
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-Primary" tabindex = "9" value="Submit" ng-show="vm.isFetchedStatus()" ng-click="vm.updateEmployee()">&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-Primary" ng-href="http://WENZHA3.asiapacific.hpqcorp.net:8080/zjunion/download">Export</a>
+        </div>
+        <div class="col-md-12 form-group">
+          <alert ng-show="vm.updatealert.show" typeof="vm.updatealert.type">{{vm.updatealert.msg}}</alert>
+        </div>
+      </form>
+    </div>
+</section>

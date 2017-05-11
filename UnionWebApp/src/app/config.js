@@ -1,0 +1,5 @@
+(function () { 
+ return angular.module('unionWebApp')
+.constant('app.config', {"env":"local","apiUrl":"http://WENZHA3.asiapacific.hpqcorp.net:8080/zjunion","currentUserChangedEvent":"currentUserChanged","notAuthenticatedEvent":"notAuthenticated","usernotExistEvent":"usernotExist","clearMessageEvent":"clearMessage"});
+
+})();

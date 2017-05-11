@@ -1,0 +1,52 @@
+<div>
+    <div class="container">
+        <h3 class="item-title">Authorized users </h3>
+        <div class="t_header">
+            <form name="vm.searchUserForm">
+                Search:&nbsp;
+            <input Id="searchvalue" class="form-control inlineCtrl" ng-model="vm.searchValue" style="width: 300px;" placeholder="Please enter Email">
+            &nbsp;By&nbsp;
+            <select id="serachcriteria" name="orgSelect" class="form-control inlineCtrl" style="width:300px" ng-model="vm.searchCriteria">
+                <option value="noValue">-------Please Select By Following Options-------</option>
+                <option value="Email">User Email</option>
+                <option value="UserId">Employee No</option>
+                <option value="Addedby">Add By</option>
+            </select>
+            <input type="submit" class="btn btn-Primary" value="Search" ng-click="vm.searchUser()">
+            &nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-Primary" value="Clear Search" ng-click="vm.clearSearch()">
+            &nbsp;&nbsp;&nbsp;
+            </form>
+        </div>
+        <div class="table-responsive">
+            <table id="userListTable" class="table" width="100%">
+                <thead>
+                    <tr class="GridHeaderRow">
+                        <th class="center">User Name</th>
+                        <th class="center">User Email</th>
+                        <th class="center">User No</th>
+                        <th class="center">User Status</th>
+                        <th class="center">Add By</th>
+                        <th class="center">Date Added</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="user in vm.userList ">
+                    <td data-th="User Name"><a ui-sref="user.edit({ID:user.id})">{{user.firstname}}, {{user.lastname}}</a></td>
+                    <td data-th="User Email"><span ng-bind="user.email"></span></td>
+                    <td data-th="User No"><span ng-bind="user.eid"></span></td>
+                    <td data-th="User Status"><span ng-bind="user.status"></span></td>
+                    <td data-th="Add By"><span ng-bind="user.addedby"></span></td>
+                    <td data-th="Date Added"><span ng-bind="user.addedon | date:'yyyy-MM-dd'"></span></td>
+                </tr>
+            </table>
+            <div ng-repeat="alert in vm.alerts" style="margin-top:-20px;margin-bottom:20px"  class="inline">
+                <alert ng-show="alert.show" typeof="alert.type">{{alert.msg}}</alert>
+            </div>
+        </div>
+        <div class="text-left">
+          <a class="btn btn-Primary" ui-sref="user.add" style="float:left;margin:20px 20px 20px 0;">Add</a>
+          <a class="btn btn-Primary" ui-sref="user.uploademployee" style="float:left;margin:20px 20px 20px 0;">Upload Employee</a>
+          <a class="btn btn-Primary" ng-href="http://WENZHA3.asiapacific.hpqcorp.net:8080/zjunion/download?type=all" style="float:left;margin:20px 20px 20px 0;">DownLoad ALL</a>
+        </div>
+    </div>
+</div>
